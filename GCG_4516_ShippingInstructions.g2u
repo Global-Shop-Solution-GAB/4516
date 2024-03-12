@@ -1,0 +1,1087 @@
+Program.Sub.ScreenSU.Start
+Gui.Form..Create
+Gui.Form..Caption("Shipping Instructions")
+Gui.Form..Size(15015,10995)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..BackColor(-2147483633)
+Gui.Form..MousePointer(0)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form.txtCust.Create(TextBox,"",True,855,300,0,105,390,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtCust.Event(LostFocus,txtCust_LostFocus)
+Gui.Form.txtCust.MaxLength(6)
+Gui.Form.lbl1.Create(Label,"Customer",True,990,255,0,105,150,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lbl2.Create(Label,"Last change",True,1935,255,0,12795,150,True,0,"Arial",8,-2147483633,0)
+Gui.Form.txtNote.Create(TextBoxR)
+Gui.Form.txtNote.Size(14595,1875)
+Gui.Form.txtNote.Position(105,1095)
+Gui.Form.lbl3.Create(Label,"Note",True,690,255,0,105,870,True,0,"Arial",8,-2147483633,0)
+Gui.Form.fr1.Create(Frame)
+Gui.Form.fr1.Size(14625,6675)
+Gui.Form.fr1.Position(105,3690)
+Gui.Form.ddlRqm.Create(DropDownList)
+Gui.Form.ddlRqm.Size(3495,330)
+Gui.Form.ddlRqm.Position(105,495)
+Gui.Form.ddlRqm.Parent("fr1")
+Gui.Form.lblReq.Create(Label,"Requirements",True,1260,255,0,105,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblReq.Parent("fr1")
+Gui.Form.ddlTerms.Create(DropDownList)
+Gui.Form.ddlTerms.Size(3135,330)
+Gui.Form.ddlTerms.Position(3780,495)
+Gui.Form.ddlTerms.Parent("fr1")
+Gui.Form.lblTerm.Create(Label,"Terms",True,705,255,0,3780,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblTerm.Parent("fr1")
+Gui.Form.ddlCarriers.Create(DropDownList)
+Gui.Form.ddlCarriers.Size(1185,330)
+Gui.Form.ddlCarriers.Position(7095,495)
+Gui.Form.ddlCarriers.Parent("fr1")
+Gui.Form.lblCarriers.Create(Label,"Carriers",True,705,255,0,7095,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblCarriers.Parent("fr1")
+Gui.Form.ddlShipDays.Create(DropDownList)
+Gui.Form.ddlShipDays.Size(930,330)
+Gui.Form.ddlShipDays.Position(8475,495)
+Gui.Form.ddlShipDays.Parent("fr1")
+Gui.Form.lblShipDays.Create(Label,"Ship Days",True,1290,255,0,8475,255,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblShipDays.Parent("fr1")
+Gui.Form.cmdAdd.Create(Button)
+Gui.Form.cmdAdd.Size(855,375)
+Gui.Form.cmdAdd.Position(105,975)
+Gui.Form.cmdAdd.Parent("fr1")
+Gui.Form.cmdAdd.Caption("Add")
+Gui.Form.cmdAdd.Event(Click,cmdAdd_Click)
+Gui.Form.cmdSave.Create(Button)
+Gui.Form.cmdSave.Size(855,375)
+Gui.Form.cmdSave.Position(120,3180)
+Gui.Form.cmdSave.Caption("Save")
+Gui.Form.cmdSave.Event(Click,cmdSave_Click)
+Gui.Form.txtCustName.Create(TextBox,"",True,3540,300,0,1095,390,False,0,"Arial",8,-2147483643,1)
+Gui.Form.lbl8.Create(Label,"Name",True,990,255,0,1080,150,True,0,"Arial",8,-2147483633,0)
+Gui.Form.cmdBrowseCust.Create(Button)
+Gui.Form.cmdBrowseCust.Size(585,375)
+Gui.Form.cmdBrowseCust.Position(4740,345)
+Gui.Form.cmdBrowseCust.Caption("^")
+Gui.Form.cmdBrowseCust.Event(Click,cmdBrowseCust_Click)
+Gui.Form.gs.Create(GsGridControl)
+Gui.Form.gs.Size(14325,4965)
+Gui.Form.gs.Position(240,5160)
+Gui.Form.gs.Event(CellValueChanged,gs_CellValueChanged)
+Gui.Form.gs.Event(RowCellClick,gs_RowCellClick)
+Gui.Form.cmdClear.Create(Button)
+Gui.Form.cmdClear.Size(855,375)
+Gui.Form.cmdClear.Position(1155,3180)
+Gui.Form.cmdClear.Caption("Clear")
+Gui.Form.cmdClear.Event(Click,cmdClear_Click)
+Gui.Form.lblDateTimeChanged.Create(Label,"",True,1935,255,0,12810,465,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lblDateTimeChanged.FontStyle(False,True,False,False,False)
+Gui.Form.ddlShipTo.Create(DropDownList)
+Gui.Form.ddlShipTo.Size(1530,330)
+Gui.Form.ddlShipTo.Position(5430,375)
+Gui.Form.ddlShipTo.Event(Change,ddlShipTo_Change)
+Gui.Form.ddlShipTo.Event(Click,ddlShipTo_Change)
+Gui.Form.lblShipTo.Create(Label,"Ship To ID",True,1050,255,0,5445,150,True,0,"Arial",8,-2147483633,0)
+Gui.Form.txtAddress.Create(TextBox,"",True,3015,300,0,7110,390,False,0,"Arial",8,-2147483643,1)
+Gui.Form.lblAddress.Create(Label,"Ship To Address",True,1935,255,0,7125,150,True,0,"Arial",8,-2147483633,0)
+Gui.Form.ddlShipToCopy.Create(DropDownList)
+Gui.Form.ddlShipToCopy.Size(1530,330)
+Gui.Form.ddlShipToCopy.Position(13095,3345)
+Gui.Form.lblShipToCopy.Create(Label,"Copy to Ship To ID",True,1515,255,0,13110,3120,True,0,"Arial",8,-2147483633,0)
+Gui.Form.cmdBrowseCustCopy.Create(Button)
+Gui.Form.cmdBrowseCustCopy.Size(585,375)
+Gui.Form.cmdBrowseCustCopy.Position(12390,3315)
+Gui.Form.cmdBrowseCustCopy.Caption("^")
+Gui.Form.cmdBrowseCustCopy.Event(Click,cmdBrowseCustCopy_Click)
+Gui.Form.txtCustCopy.Create(TextBox,"",True,855,300,0,11415,3345,True,0,"Arial",8,-2147483643,1)
+Gui.Form.txtCustCopy.MaxLength(6)
+Gui.Form.txtCustCopy.Event(LostFocus,txtCustCopy_LostFocus)
+Gui.Form.lblCustCopy.Create(Label,"Copy to Customer",True,1440,255,0,10920,3120,True,0,"Arial",8,-2147483633,0)
+Gui.Form.cmdCopy.Create(Button)
+Gui.Form.cmdCopy.Size(855,375)
+Gui.Form.cmdCopy.Position(10005,3180)
+Gui.Form.cmdCopy.Caption("Copy")
+Gui.Form.cmdCopy.Event(Click,cmdCopy_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sCustomer.Declare(string)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'BN May 19, 2017
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+'For New Shipping
+f.Intrinsic.Control.If(v.Caller.Hook,=,28510)
+	v.Passed.000331.Set("Shipping Inst")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+'For Open Shipping
+f.Intrinsic.Control.If(v.Caller.Hook,=,25920)
+	v.Passed.000204.Set("Shipping Inst")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+
+F.ODBC.Connection!conx.OpenConnection(v.Ambient.PDSN, v.Ambient.PUser, v.Ambient.PPass)
+
+f.Intrinsic.Control.CallSub(bind_dropdownlists)
+F.Data.DataTable.CreateFromSQL("DT", "conx", "Select * from V_GCG_4516 where Customer = '' and ShipToID = ''", True)
+gui.Form.gs.addgridviewfromdatatable("GV","DT")
+gui.Form.gs.setColumnProperty("GV","Customer","Visible","False")
+gui.Form.gs.setColumnProperty("GV","Seq","MaxWidth","40")
+F.Data.DataTable.Create("Req_DT", True)
+F.Data.DataTable.Create("Terms_DT",True)
+F.Data.DataTable.Create("ShipDays_DT", True)
+F.Data.DataTable.Create("Carriers_DT",  True)
+
+gui.Form.gs.MainView("GV")
+
+f.Intrinsic.Control.If(v.Caller.Hook,=,28550)
+	gui.Form.txtCust.Text(v.Passed.000204)
+	f.Intrinsic.Control.CallSub(txtcust_lostfocus)
+	F.Intrinsic.Control.If(V.Passed.000205.Trim,!=,"")
+		F.Intrinsic.String.Build("select * from V_GCG_4516 where ltrim(rtrim(Customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}';",V.Screen.Form!txtCust.Text,V.Passed.000205,V.Local.sSQL)
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Local.sSQL,!=,"")
+			gui.Form.ddlShipTo.Text(V.Passed.000205)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.CallSub(bind)
+	f.Intrinsic.Control.CallSub(deactivate_control)
+f.Intrinsic.Control.ElseIf(v.Caller.Hook,=,25980)
+	gui.Form.txtCust.Text(v.Passed.000006)
+	f.Intrinsic.Control.CallSub(txtcust_lostfocus)
+	F.Intrinsic.Control.If(V.Passed.000153.Trim,!=,"")
+		F.Intrinsic.String.Build("select * from V_GCG_4516 where ltrim(rtrim(Customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}';",V.Screen.Form!txtCust.Text,V.Passed.000153,V.Local.sSQL)
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+		F.Intrinsic.Control.If(V.Local.sSQL,!=,"")
+			gui.Form.ddlShipTo.Text(V.Passed.000153)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.CallSub(bind)
+	f.Intrinsic.Control.CallSub(deactivate_control)
+f.Intrinsic.Control.EndIf
+
+gui.Form..Show
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.Deactivate_Control.Start
+F.Intrinsic.Control.SetErrorHandler("Deactivate_Control_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+gui.Form.txtCust.Enabled(False)
+'gui.Form.txtNote.Enabled(False)
+gui.Form.ddlShipTo.Enabled(False)
+gui.Form.cmdBrowseCust.Visible(False)
+gui.Form.cmdSave.Visible(False)
+gui.Form.cmdClear.Visible(False)
+gui.Form.cmdAdd.Visible(False)
+
+gui.Form.cmdCopy.Visible(False)
+gui.Form.lblCustCopy.Visible(False)
+gui.Form.txtCustCopy.Visible(False)
+gui.Form.cmdBrowseCustCopy.Visible(False)
+gui.Form.lblShipToCopy.Visible(False)
+gui.Form.ddlShipToCopy.Visible(False)
+
+gui.Form.lblReq.Visible(False)
+gui.Form.lblTerm.Visible(False)
+gui.Form.lblShipDays.Visible(False)
+gui.Form.lblCarriers.Visible(False)
+
+gui.Form.ddlRqm.Visible(False)
+gui.Form.ddlTerms.Visible(False)
+gui.Form.ddlShipDays.Visible(False)
+gui.Form.ddlCarriers.Visible(False)
+
+gui.Form.gs.setColumnProperty("GV","Customer","Visible","False")
+gui.Form.gs.setColumnProperty("GV","Remove","Visible","False")
+
+Gui.Form.gs.SetColumnProperty("GV","Requirement","AllowEdit",False)
+Gui.Form.gs.SetColumnProperty("GV","Requirement","ReadOnly",true)
+
+Gui.Form.gs.SetColumnProperty("GV","Carriers","AllowEdit",False)
+Gui.Form.gs.SetColumnProperty("GV","Carriers","ReadOnly",True)
+
+'Terms
+Gui.Form.gs.SetColumnProperty("GV","Term","AllowEdit",False)
+Gui.Form.gs.SetColumnProperty("GV","Term","ReadOnly",True)
+
+'ShipDays
+Gui.Form.gs.SetColumnProperty("GV","ShipDays","AllowEdit",False)
+Gui.Form.gs.SetColumnProperty("GV","ShipDays","ReadOnly",True)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Deactivate_Control_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Deactivate_Control.End
+
+Program.Sub.Form_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("Form_UnLoad_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Form_UnLoad_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_Shipping_Instructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.Bind_Dropdownlists.Start
+F.Intrinsic.Control.SetErrorHandler("Bind_Dropdownlists_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local..BulkDeclareString(sError, sSQL)
+gui.Form.ddlRqm.ClearItems
+gui.Form.ddlTerms.ClearItems
+gui.Form.ddlShipDays.ClearItems
+gui.Form.ddlCarriers.ClearItems
+
+f.ODBC.Connection!conx.OpenRecordsetRO("rst","Select * from GCG_4516_Req order by Seq")
+f.Intrinsic.Control.DoUntil(Variable.ODBC.conx!rst.EOF,=,True)
+	gui.Form.ddlRqm.additem(v.ODBC.conx!rst.FieldValTrim!Requirement)
+	f.ODBC.conx!rst.MoveNext
+f.Intrinsic.Control.Loop
+f.ODBC.conx!rst.Close
+
+f.ODBC.Connection!conx.OpenRecordsetRO("rst","Select * from GCG_4516_Terms order by Seq")
+f.Intrinsic.Control.DoUntil(Variable.ODBC.conx!rst.EOF,=,True)
+	gui.Form.ddlTerms.additem(v.ODBC.conx!rst.FieldValTrim!Term)
+	f.ODBC.conx!rst.MoveNext
+f.Intrinsic.Control.Loop
+f.ODBC.conx!rst.Close
+
+f.ODBC.Connection!conx.OpenRecordsetRO("rst","Select * from GCG_4516_ShipDays order by Seq")
+f.Intrinsic.Control.DoUntil(Variable.ODBC.conx!rst.EOF,=,True)
+	gui.Form.ddlShipDays.additem(v.ODBC.conx!rst.FieldValTrim!ShipDays)
+	f.ODBC.conx!rst.MoveNext
+f.Intrinsic.Control.Loop
+f.ODBC.conx!rst.Close
+
+f.ODBC.Connection!conx.OpenRecordsetRO("rst","Select * from GCG_4516_Carriers order by Seq")
+f.Intrinsic.Control.DoUntil(Variable.ODBC.conx!rst.EOF,=,True)
+	gui.Form.ddlCarriers.additem(v.ODBC.conx!rst.FieldValTrim!CarrierID)
+	f.ODBC.conx!rst.MoveNext
+f.Intrinsic.Control.Loop
+f.ODBC.conx!rst.Close
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Bind_Dropdownlists_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Bind_Dropdownlists.End
+
+Program.Sub.cmdBrowseCust_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdBrowseCust_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError, sRet,sSQL)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(205,"",V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	Gui.Form.txtCust.Text(V.Local.sRet(0).Trim)
+	Gui.Form.txtCustName.Text(V.Local.sRet(1).Trim)
+	'Populate Ship To DDL
+	F.Intrinsic.Control.CallSub(PopulateShipToDDL)
+	gui.Form.txtNote.SetFocus	
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Select Note from GCG_4516_Header  where ltrim(rtrim(Customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}'",v.Screen.Form!txtCust.Text.Trim,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"")
+	Gui.Form.txtNote.Text(V.Local.sRet.Trim)	
+f.Intrinsic.Control.Else
+	Gui.Form.txtNote.Text("")
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.CallSub(bind)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdBrowseCust_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdBrowseCust_Click.End
+
+Program.Sub.txtCust_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtCust_LostFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+f.Intrinsic.Control.If(v.Screen.Form!txtCust.Text.Trim,=,"")	
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+v.Local..BulkDeclareString(sError, sSQL, sRet)
+
+f.Intrinsic.String.Build("Select Customer, Name_Customer from V_Customer_Master  where ltrim(rtrim(Customer)) = '{0}'",v.Screen.Form!txtCust.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,=,"")
+	f.Intrinsic.UI.Msgbox("No customer found")
+	f.Intrinsic.Control.CallSub(cmdclear_click)
+f.Intrinsic.Control.Else
+	Gui.Form.txtCust.Text(V.Local.sRet(0).Trim)	
+	Gui.Form.txtCustName.Text(V.Local.sRet(1).Trim)
+	F.Intrinsic.Control.CallSub(PopulateShipToDDL)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Select Note from GCG_4516_Header  where ltrim(rtrim(Customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}'",v.Screen.Form!txtCust.Text.Trim,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"")
+	Gui.Form.txtNote.Text(V.Local.sRet.Trim)	
+f.Intrinsic.Control.Else
+	Gui.Form.txtNote.Text("")
+f.Intrinsic.Control.EndIf	
+
+f.Intrinsic.Control.CallSub(bind)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtCust_LostFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtCust_LostFocus.End
+
+Program.Sub.Bind.Start
+F.Intrinsic.Control.SetErrorHandler("Bind_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError, sSQL, sRet)
+
+f.Data.DataTable.Close("DT")
+
+'v.Local.sSQL.Set("Select d.Seq, d.Requirement, d.Carriers, c.Name, t.Term, c.Account, c.Phone, s.ShipDays from GCG_4516_Details d join GCG_4516_Req r on d.Requirement = r.Seq join GCG_4516_Terms t on d.term = t.Seq join GCG_4516_ShipDays s on d.ShipDays = s.Seq join GCG_4516_Carriers c on d.Carriers = c.CarrierID")
+f.Intrinsic.String.Build("Select * from V_GCG_4516 where ltrim(rtrim(Customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}' order by Seq",v.Screen.Form!txtCust.Text.Trim,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("DT", "conx", v.Local.sSQL, True)
+F.Data.DataTable.AddColumn("DT","Remove","string","Remove")
+
+gui.Form.gs.addgridviewfromdatatable("GV","DT")
+f.Intrinsic.Control.CallSub(format_grid)
+f.Intrinsic.Control.CallSub(bind_columnedit)
+gui.Form.gs.MainView("GV")
+
+'get lastchange time
+f.Intrinsic.String.Build("Select LastChange from GCG_4516_Header  where ltrim(rtrim(Customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}'",v.Screen.Form!txtCust.Text.Trim,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"")
+	Gui.Form.lblDateTimeChanged.Text(V.Local.sRet.Trim)	
+f.Intrinsic.Control.Else
+	Gui.Form.lblDateTimeChanged.Text("")	
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Bind_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Bind.End
+
+Program.Sub.Format_Grid.Start
+F.Intrinsic.Control.SetErrorHandler("Format_Grid_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+gui.Form.gs.setColumnProperty("GV","Customer","Visible","False")
+
+gui.Form.gs.setColumnProperty("GV","Seq","MaxWidth","40")
+
+'Requirement
+Gui.Form.gs.SetColumnProperty("GV","Requirement","AllowEdit",true)
+Gui.Form.gs.SetColumnProperty("GV","Requirement","ReadOnly",false)
+
+'Carriers
+Gui.Form.gs.SetColumnProperty("GV","Carriers","AllowEdit",true)
+Gui.Form.gs.SetColumnProperty("GV","Carriers","ReadOnly",false)
+gui.Form.gs.setColumnProperty("GV","Carriers","MaxWidth","60")
+
+'Terms
+Gui.Form.gs.SetColumnProperty("GV","Term","AllowEdit",true)
+Gui.Form.gs.SetColumnProperty("GV","Term","ReadOnly",false)
+gui.Form.gs.setColumnProperty("GV","Term","MaxWidth","80")
+
+'ShipDays
+Gui.Form.gs.SetColumnProperty("GV","ShipDays","AllowEdit",true)
+Gui.Form.gs.SetColumnProperty("GV","ShipDays","ReadOnly",false)
+gui.Form.gs.setColumnProperty("GV","ShipDays","MaxWidth","55")
+
+'Remove
+Gui.Form.gs.SetColumnProperty("GV","Remove","AllowEdit",false)
+Gui.Form.gs.SetColumnProperty("GV","Remove","ReadOnly",true)
+gui.Form.gs.setColumnProperty("GV","Remove","MaxWidth","60")
+
+'Phone
+gui.Form.gs.setColumnProperty("GV","Phone","MaxWidth","120")
+
+'Account
+gui.Form.gs.setColumnProperty("GV","Account","MaxWidth","120")
+
+'Name
+gui.Form.gs.setColumnProperty("GV","Name","MaxWidth","200")
+
+'ShipToID
+gui.Form.gs.SetColumnProperty("GV","ShipToID","MaxWidth","80")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Format_Grid_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Format_Grid.End
+
+Program.Sub.Bind_ColumnEdit.Start
+v.Local..BulkDeclareLong(iCounter, iReqRowNum, iTermRowNum, iShipDaysRowNum, iCarrierRowNum)
+V.Local.sHold.Declare(string)
+
+F.Intrinsic.Debug.Stop
+
+F.Data.DataTable.Close("Req_DT")
+F.Data.DataTable.Close("Terms_DT")
+F.Data.DataTable.Close("ShipDays_DT")
+F.Data.DataTable.Close("Carriers_DT")
+
+F.Data.DataTable.CreateFromSQL("Req_DT", "conx", "Select Requirement from GCG_4516_Req order by Seq", True)
+F.Data.DataTable.CreateFromSQL("Terms_DT", "conx", "Select Term from GCG_4516_Terms order by Seq", True)
+F.Data.DataTable.CreateFromSQL("ShipDays_DT", "conx", "Select ShipDays from GCG_4516_ShipDays order by Seq", True)
+F.Data.DataTable.CreateFromSQL("Carriers_DT", "conx", "Select CarrierID from GCG_4516_Carriers order by Seq", True)
+
+'Requirement
+'v.Local.iReqRowNum.Set(v.DataTable.Req_DT.RowCount)
+v.Local.sReqRange.Declare(String)
+f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.Req_DT.RowCount--,1)
+	f.Intrinsic.Control.If(v.Local.iCounter,=,0)
+		v.Local.sReqRange.Set(Variable.DataTable.Req_DT(v.Local.iCounter).Requirement!FieldValString)
+	f.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(v.Local.sReqRange,"*!*",Variable.DataTable.Req_DT(v.Local.iCounter).Requirement!FieldValString,v.Local.sReqRange)
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.Next(v.Local.iCounter)
+Gui.Form.gs.ColumnEdit("GV", "Requirement", "DropdownList",v.Local.sReqRange)
+
+'Terms
+'v.local.iTermRowNum.Set(v.DataTable.Terms_DT.RowCount)
+v.local.sTermRange.Declare(String)
+f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.Terms_DT.RowCount--,1)
+	f.Intrinsic.Control.If(v.Local.iCounter,=,0)
+		v.Local.sTermRange.Set(Variable.DataTable.Terms_DT(v.Local.iCounter).Term!FieldValString)
+	f.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(v.local.sTermRange,"*!*",Variable.DataTable.Terms_DT(v.Local.iCounter).Term!FieldValString,v.local.sTermRange)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Next(v.Local.iCounter)
+Gui.Form.gs.ColumnEdit("GV", "Term", "DropdownList",v.local.sTermRange)
+
+'ShipDays
+'v.local.iShipDaysRowNum.Set(v.DataTable.ShipDays_DT.RowCount)
+v.local.sShipDaysRange.Declare(String)
+f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.ShipDays_DT.RowCount--,1)
+	f.Intrinsic.Control.If(v.Local.iCounter,=,0)
+		v.Local.sShipDaysRange.Set(Variable.DataTable.ShipDays_DT(v.Local.iCounter).ShipDays!FieldValString)
+	f.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(v.local.sShipDaysRange,"*!*",Variable.DataTable.ShipDays_DT(v.Local.iCounter).ShipDays!FieldValString,v.local.sShipDaysRange)	
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Next(v.Local.iCounter)
+Gui.Form.gs.ColumnEdit("GV", "ShipDays", "DropdownList",v.local.sShipDaysRange)
+
+'Carriers
+'v.Local.iCarrierRowNum.Set(v.DataTable.Carriers_DT.RowCount)
+v.Local.sCarrierRange.Declare(String)
+f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.Carriers_DT.RowCount--,1)
+	f.Intrinsic.Control.If(v.Local.iCounter,=,0)
+		v.Local.sCarrierRange.Set(Variable.DataTable.Carriers_DT(v.Local.iCounter).CarrierID!FieldValString)
+	f.Intrinsic.Control.Else
+		F.Intrinsic.String.Concat(v.Local.sCarrierRange,"*!*",Variable.DataTable.Carriers_DT(v.Local.iCounter).CarrierID!FieldValString,v.Local.sCarrierRange)
+	f.Intrinsic.Control.EndIf	
+f.Intrinsic.Control.Next(v.Local.iCounter)	
+Gui.Form.gs.ColumnEdit("GV", "Carriers", "DropdownList",v.Local.sCarrierRange)
+
+Program.Sub.Bind_ColumnEdit.End
+
+Program.Sub.cmdSave_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdSave_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError, sSQL, sRet, sLastChange, sHold)
+
+f.Intrinsic.String.Format(v.Ambient.Date,"MM-DD-YYYY",v.Local.sHold)
+f.Intrinsic.String.Format(v.Ambient.Time,"Hh:Nn:Ss",v.Local.sLastChange)
+f.Intrinsic.String.Concat(v.Local.sHold,"  ",v.Local.sLastChange,v.Local.sLastChange)
+
+'	f.Intrinsic.String.Build("Update GCG_4516_Header set Note = '{0}', LastChange = '{1}' where rtrim(ltrim(Customer)) = '{2}'",v.Screen.Form!txtNote.Text.Trim,v.Local.sLastChange,v.Screen.Form!txtCust.Text.Trim, v.Local.sSQL)
+'	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+f.Intrinsic.String.Build("Select Customer from V_Customer_Master  where ltrim(rtrim(Customer)) = '{0}'",v.Screen.Form!txtCust.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,=,"")
+	f.Intrinsic.UI.Msgbox("Invalid customer")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.UI.InvokeWaitDialog("Saving")
+f.Intrinsic.String.Build("Select * from GCG_4516_Header where rtrim(ltrim(customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}'",v.Screen.Form!txtCust.Text.Trim,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+f.Intrinsic.Control.If(v.Local.sRet,=,"")
+	f.Intrinsic.String.Build("Insert into GCG_4516_Header (Customer, Note, LastChange, ShipToID) values ('{0}','{1}','{2}','{3}')",v.Screen.Form!txtCust.Text.Trim,v.Screen.Form!txtNote.Text.Trim, v.Local.sLastChange,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+f.Intrinsic.Control.Else
+	f.Intrinsic.String.Build("Update GCG_4516_Header set Note = '{0}', LastChange = '{1}' where rtrim(ltrim(Customer)) = '{2}' and ltrim(rtrim(ShipToID)) = '{3}'",v.Screen.Form!txtNote.Text.Trim,v.Local.sLastChange,v.Screen.Form!txtCust.Text.Trim,V.Screen.Form!ddlShipTo.Text.Trim, v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	
+f.Intrinsic.Control.EndIf
+f.Intrinsic.UI.CloseWaitDialog
+
+gui.Form.lblDateTimeChanged.Text(v.Local.sLastChange)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdSave_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.cmdAdd_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdAdd_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError, sSQL, sCarrierID, sRet, sHold)
+v.Local..BulkDeclareLong(iReqSeq, iTermSeq, iShipDaysSeq, iSeqDetails)
+
+f.Intrinsic.Control.If(v.Screen.Form!txtCust.Text.Trim,=,"")
+	f.Intrinsic.UI.Msgbox("Please select and/or save Customer")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Select * from GCG_4516_Header where ltrim(rtrim(Customer)) = '{0}' and ltrim(rtrim(ShiptoID)) = '{1}'",v.Screen.Form!txtCust.Text.Trim,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+f.Intrinsic.Control.If(v.Local.sRet,=,"")
+	f.Intrinsic.UI.Msgbox("Please select and/or save Customer")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.Form!ddlRqm.ListIndex,=,-1)
+	f.Intrinsic.UI.Msgbox("Please select Requirement")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.Form!ddlTerms.ListIndex,=,-1)
+	f.Intrinsic.UI.Msgbox("Please select Terms")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.Form!ddlCarriers.ListIndex,=,-1)
+	f.Intrinsic.UI.Msgbox("Please select Carrier ID")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.If(v.Screen.Form!ddlShipDays.ListIndex,=,-1)
+	f.Intrinsic.UI.Msgbox("Please select Ship Days")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Select Seq from GCG_4516_Req where ltrim(rtrim(Requirement)) = '{0}'",v.Screen.Form!ddlRqm.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.iReqSeq)
+
+f.Intrinsic.String.Build("Select Seq from GCG_4516_Terms where ltrim(rtrim(Term)) = '{0}'",v.Screen.Form!ddlTerms.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.iTermSeq)
+
+f.Intrinsic.String.Build("Select Seq from GCG_4516_ShipDays where ShipDays = '{0}'",v.Screen.Form!ddlShipDays.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.iShipDaysSeq)
+
+f.Intrinsic.String.Build("Select CarrierID from GCG_4516_Carriers where ltrim(rtrim(CarrierID)) = '{0}'",v.Screen.Form!ddlCarriers.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sCarrierID)
+
+'Check to make sure unique record in Details table for a specific customer
+f.Intrinsic.String.Build("Select * from GCG_4516_Details where ltrim(rtrim(Customer)) = '{0}' and Requirement = {1} and Term = {2} and ShipDays = {3} and ltrim(rtrim(Carriers)) = '{4}' and ltrim(rtrim(ShipToID)) = '{5}'",v.Screen.Form!txtCust.Text.Trim,v.Local.iReqSeq,v.Local.iTermSeq,v.Local.iShipDaysSeq,v.Local.sCarrierID,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sHold)
+f.Intrinsic.Control.If(v.Local.sHold,<>,"")
+	f.Intrinsic.UI.Msgbox("Same instructions exist for this customer")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Select max(Seq + 1) from GCG_4516_Details where ltrim(rtrim(customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}'",v.Screen.Form!txtCust.Text.Trim,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sHold)
+f.Intrinsic.Control.If(v.Local.sHold,=,"")
+	v.Local.iSeqDetails.Set(1)
+f.Intrinsic.Control.Else
+	v.Local.iSeqDetails.Set(v.Local.sHold)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Insert into GCG_4516_Details (Seq, Customer, Requirement, Term, ShipDays, Carriers, ShipToID) values ({0},'{1}',{2},{3},{4},'{5}','{6}')",v.Local.iSeqDetails,v.Screen.Form!txtCust.Text.Trim, v.Local.iReqSeq,v.Local.iTermSeq,v.Local.iShipDaysSeq,v.Local.sCarrierID,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+f.Intrinsic.Control.CallSub(update_lastchange)
+f.Intrinsic.Control.CallSub(bind)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdAdd_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmdAdd_Click.End
+
+Program.Sub.gs_CellValueChanged.Start
+F.Intrinsic.Control.SetErrorHandler("gs_CellValueChanged_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError, sRowNumber,sRowValues, sSQL, sHold, sCarrierID, sOldCarrierID)
+v.Local..BulkDeclareLong(iRowNumber, iStringLength, iReqSeq,iTermSeq,iShipDaysSeq, iOldReq, iOldTerm, iOldShipDays)
+
+gui.Form.gs.GetSelectedRows("GV", v.Local.sRowNumber)
+v.Local.iRowNumber.Set(v.Local.sRowNumber)
+gui.Form.gs.GetRowValues("GV", v.Local.iRowNumber,v.Local.sRowValues)
+f.Intrinsic.String.Split(v.Local.sRowValues,"*!*",v.Local.sRowValues)
+
+'Get old ShipDays
+f.Intrinsic.String.Build("Select Requirement, Term, ShipDays, Carriers from GCG_4516_Details where ltrim(rtrim(Customer)) = '{0}' and Seq = {1} and ltrim(rtrim(ShipToID)) = '{2}'",v.Local.sRowValues(8).Trim,v.Local.sRowValues(0),V.Local.sRowValues(9).Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sHold)
+f.Intrinsic.Control.If(v.Local.sHold,<>,"")
+	f.Intrinsic.String.Split(v.Local.sHold,"*!*",v.Local.sHold)
+	v.Local.iOldReq.Set(v.Local.sHold(0))
+	v.Local.iOldTerm.Set(v.Local.sHold(1))
+	v.Local.iOldShipDays.Set(V.Local.sHold(2))
+	v.Local.sOldCarrierID.Set(v.Local.sHold(3))
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Select Seq from GCG_4516_Req where ltrim(rtrim(Requirement)) = '{0}'",v.Local.sRowValues(1).Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.iReqSeq)
+
+f.Intrinsic.String.Build("Select Seq from GCG_4516_Terms where ltrim(rtrim(Term)) = '{0}'",v.Local.sRowValues(4).Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.iTermSeq)
+
+f.Intrinsic.String.Build("Select Seq from GCG_4516_ShipDays where ShipDays = {0}",v.Local.sRowValues(7).Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.iShipDaysSeq)
+
+f.Intrinsic.String.Build("Select CarrierID from GCG_4516_Carriers where ltrim(rtrim(CarrierID)) = '{0}'",v.Local.sRowValues(2).Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sCarrierID)
+
+'Check to make sure unique record in Details table for a specific customer
+f.Intrinsic.String.Build("Select * from GCG_4516_Details where ltrim(rtrim(Customer)) = '{0}' and Requirement = {1} and Term = {2} and ShipDays = {3} and ltrim(rtrim(Carriers)) = '{4}' and ltrim(rtrim(ShipToID)) = '{5}'",v.Local.sRowValues(8).Trim,v.Local.iReqSeq,v.Local.iTermSeq,v.Local.iShipDaysSeq,v.Local.sCarrierID,V.Local.sRowValues(9).Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sHold)
+f.Intrinsic.Control.If(v.Local.sHold,<>,"")
+	f.Intrinsic.UI.Msgbox("Same instructions exist for this customer")
+	f.Intrinsic.Control.CallSub(bind)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Update GCG_4516_Details set Requirement = {0}, Carriers = '{1}', Term = {2}, ShipDays = {3} where ltrim(rtrim(Customer)) = '{4}' and Seq = {5} and ltrim(rtrim(ShipToID)) = '{6}'",v.Local.iReqSeq,v.Local.sCarrierID,v.Local.iTermSeq,v.Local.iShipDaysSeq ,v.Local.sRowValues(8).Trim,v.Local.sRowValues(0),V.Local.sRowValues(9).Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+f.Intrinsic.Control.CallSub(update_lastchange)
+f.Intrinsic.Control.CallSub(bind)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gs_CellValueChanged_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.gs_CellValueChanged.End
+
+Program.Sub.gs_RowCellClick.Start
+F.Intrinsic.Control.SetErrorHandler("gs_RowCellClick_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError, sSQL, sHold, sLastChange)
+v.Local.iFlag.Declare(long)
+
+F.Intrinsic.Control.If(V.Args.Column,=,"Remove")
+	f.Intrinsic.Control.If(V.DataTable.DT(v.Args.RowIndex).Remove!FieldValTrim,=,"")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	Function.Intrinsic.UI.MsgBox ("Do you want to delete this record?", "Delete confirmation", 3,v.Local.iFlag)
+	f.Intrinsic.Control.If(v.Local.iFlag,=,6)	
+		f.Intrinsic.String.Build("Delete from GCG_4516_Details where ltrim(rtrim(Customer)) = '{0}' and Seq = {1} and ltrim(rtrim(ShipToID)) = '{2}'",V.DataTable.DT(v.Args.RowIndex).Customer!FieldValTrim,V.DataTable.DT(v.Args.RowIndex).Seq!FieldValString,V.DataTable.DT(V.Args.RowIndex).ShipToID!FieldValTrim,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)		
+		f.Intrinsic.Control.CallSub(update_lastchange)		
+		f.Intrinsic.Control.CallSub(bind)
+	f.Intrinsic.Control.EndIf	
+	
+Function.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gs_RowCellClick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.gs_RowCellClick.End
+
+Program.Sub.cmdClear_Click.Start
+F.Intrinsic.Control.SetErrorHandler("gs_RowCellClick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+gui.Form.txtCust.Text("")
+gui.Form.txtCustName.Text("")
+gui.Form.ddlShipTo.ClearItems
+gui.Form.txtAddress.Text("")
+gui.Form.lblDateTimeChanged.Text("")
+gui.Form.txtNote.Text("")
+gui.Form.txtCustCopy.Text("")
+gui.Form.ddlShipToCopy.ClearItems
+f.Intrinsic.Control.CallSub(bind)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("gs_RowCellClick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.Update_LastChange.Start
+F.Intrinsic.Control.SetErrorHandler("Update_LastChange_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError, sSQL, sLastChange, sHold)
+
+f.Intrinsic.String.Format(v.Ambient.Date,"MM-DD-YYYY",v.Local.sHold)
+f.Intrinsic.String.Format(v.Ambient.Time,"Hh:Nn:Ss",v.Local.sLastChange)
+f.Intrinsic.String.Concat(v.Local.sHold,"  ",v.Local.sLastChange,v.Local.sLastChange)
+
+f.Intrinsic.String.Build("Update GCG_4516_Header set LastChange = '{0}' where rtrim(ltrim(Customer)) = '{1}' and rtrim(ltrim(ShipToID)) = '{2}'",v.Local.sLastChange,v.Screen.Form!txtCust.Text.Trim,V.Screen.Form!ddlShipTo.Text.Trim, v.Local.sSQL)
+f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Update_LastChange_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Update_LastChange.End
+
+Program.Sub.ddlShipTo_Change.Start
+F.Intrinsic.Control.SetErrorHandler("ddlShipTo_Change_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sRet.Declare(String)
+V.Local.sSQL.Declare(String)
+
+Gui.Form.txtAddress.Text(V.Dictionary.dictAddress![V.Screen.Form!ddlShipTo.Text.Trim])
+
+f.Intrinsic.String.Build("Select Note from GCG_4516_Header  where ltrim(rtrim(Customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}'",v.Screen.Form!txtCust.Text.Trim,V.Screen.Form!ddlShipTo.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,<>,"")
+	Gui.Form.txtNote.Text(V.Local.sRet.Trim)	
+f.Intrinsic.Control.Else
+	Gui.Form.txtNote.Text("")
+f.Intrinsic.Control.EndIf	
+
+f.Intrinsic.Control.CallSub(bind)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("ddlShipTo_Change_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.ddlShipTo_Change.End
+
+Program.Sub.PopulateShipToDDL.Start
+F.Intrinsic.Control.SetErrorHandler("Populate_ShipToDDL_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sCust.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iCnt.Declare(Long)
+V.Local.bExists.Declare(Boolean)
+V.Local.sCust.Set(V.Screen.Form!txtCust.Text)
+
+Gui.Form.ddlShipTo.ClearItems
+F.Data.Dictionary.Exists("dictAddress",V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists)
+	F.Data.Dictionary.Close("dictAddress")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("select rtrim(SHIP_SEQ), rtrim(SHIP_ADDRESS1) from V_OE_MULTI_SHIP where rtrim(CUSTOMER) = '{0}';",V.Local.sCust,V.Local.sSQL)
+F.Data.Dictionary.CreateFromSQL("dictAddress","conx",V.Local.sSQL)
+
+F.Intrinsic.String.Build("select rtrim(ADDRESS1) from V_CUSTOMER_MASTER where rtrim(CUSTOMER) = '{0}';",V.Local.sCust,V.Local.sSQL)
+F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+F.Data.Dictionary.AddItem("dictAddress","Default",V.Local.sRet)
+F.Data.Dictionary.SetDefaultReturn("dictAddress","")
+
+Gui.Form.ddlShipTo.AddItem("Default")
+Gui.Form.ddlShipTo.ListIndex(0)
+
+F.Intrinsic.String.Build("select rtrim(SHIP_SEQ) from V_OE_MULTI_SHIP where rtrim(CUSTOMER) = '{0}';",V.Local.sCust,V.Local.sSQL)
+F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"#$#",V.Local.sRet)
+
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sRet.UBound,1)
+	Gui.Form.ddlShipTo.AddItem(V.Local.sRet(V.Local.iCnt))
+F.Intrinsic.Control.Next(V.Local.iCnt)
+V.Local.sRet.Redim(0,0)
+
+Gui.Form.txtAddress.Text(V.Dictionary.dictAddress!Default)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Populate_ShipToDDL_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.PopulateShipToDDL.End
+
+Program.Sub.cmdCopy_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdCopy_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError, sSQL, sRet, sLastChange, sHold, sCarrierID)
+V.Local.iCnt.Declare(Long)
+V.Local.iReqSeq.Declare(Long)
+V.Local.iTermSeq.Declare(Long)
+V.Local.iShipDaysSeq.Declare(Long)
+v.Local.iSeqDetails.Declare(Long)
+
+f.Intrinsic.String.Format(v.Ambient.Date,"MM-DD-YYYY",v.Local.sHold)
+f.Intrinsic.String.Format(v.Ambient.Time,"Hh:Nn:Ss",v.Local.sLastChange)
+f.Intrinsic.String.Concat(v.Local.sHold,"  ",v.Local.sLastChange,v.Local.sLastChange)
+
+'	f.Intrinsic.String.Build("Update GCG_4516_Header set Note = '{0}', LastChange = '{1}' where rtrim(ltrim(Customer)) = '{2}'",v.Screen.Form!txtNote.Text.Trim,v.Local.sLastChange,v.Screen.Form!txtCust.Text.Trim, v.Local.sSQL)
+'	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+f.Intrinsic.String.Build("Select Customer from V_Customer_Master  where ltrim(rtrim(Customer)) = '{0}'",v.Screen.Form!txtCust.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,=,"")
+	f.Intrinsic.UI.Msgbox("Invalid customer")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.String.Build("Select Customer from V_Customer_Master  where ltrim(rtrim(Customer)) = '{0}'",v.Screen.Form!txtCustCopy.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,=,"")
+	f.Intrinsic.UI.Msgbox("Invalid copy to customer")
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.Msgbox("Are sure that you want to copy this information? This will copy the notes and the all the details.","Copy Verification",4,V.Local.iCnt)
+F.Intrinsic.Control.If(V.Local.iCnt,=,7)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.UI.InvokeWaitDialog("Copying Notes")
+f.Intrinsic.String.Build("Select * from GCG_4516_Header where rtrim(ltrim(customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}'",v.Screen.Form!txtCustCopy.Text.Trim,V.Screen.Form!ddlShipToCopy.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+f.Intrinsic.Control.If(v.Local.sRet,=,"")
+	f.Intrinsic.String.Build("Insert into GCG_4516_Header (Customer, Note, LastChange, ShipToID) values ('{0}','{1}','{2}','{3}')",v.Screen.Form!txtCustCopy.Text.Trim,v.Screen.Form!txtNote.Text.Trim, v.Local.sLastChange,V.Screen.Form!ddlShipToCopy.Text.Trim,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+
+f.Intrinsic.Control.Else
+	f.Intrinsic.String.Build("Update GCG_4516_Header set Note = '{0}', LastChange = '{1}' where rtrim(ltrim(Customer)) = '{2}' and ltrim(rtrim(ShipToID)) = '{3}'",v.Screen.Form!txtNote.Text.Trim,v.Local.sLastChange,v.Screen.Form!txtCustCopy.Text.Trim,V.Screen.Form!ddlShipToCopy.Text.Trim, v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	
+f.Intrinsic.Control.EndIf
+
+'Copy Details DT
+F.Intrinsic.UI.InvokeWaitDialog("Copying Details")
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.DT.RowCount--,1)
+	f.Intrinsic.String.Build("Select Seq from GCG_4516_Req where ltrim(rtrim(Requirement)) = '{0}'",V.DataTable.DT(V.Local.iCnt).Requirement!FieldValTrim,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.iReqSeq)
+	
+	f.Intrinsic.String.Build("Select Seq from GCG_4516_Terms where ltrim(rtrim(Term)) = '{0}'",V.DataTable.DT(V.Local.iCnt).Term!FieldValTrim,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.iTermSeq)
+	
+	f.Intrinsic.String.Build("Select Seq from GCG_4516_ShipDays where ShipDays = '{0}'",V.DataTable.DT(V.Local.iCnt).ShipDays!FieldValTrim,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.iShipDaysSeq)
+	
+	f.Intrinsic.String.Build("Select CarrierID from GCG_4516_Carriers where ltrim(rtrim(CarrierID)) = '{0}'",V.DataTable.DT(V.Local.iCnt).Carriers!FieldValTrim,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sCarrierID)
+	
+	F.Intrinsic.String.Build("Select * from GCG_4516_Details where ltrim(rtrim(Customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}' and Requirement = {2} and Term = {3} and ShipDays = {4} and ltrim(rtrim(Carriers)) = '{5}'",V.Screen.Form!txtCustCopy.Text.Trim,V.Screen.Form!ddlShipToCopy.Text.Trim,V.Local.iReqSeq,V.Local.iTermSeq,V.Local.iShipDaysSeq,V.Local.sCarrierID,V.Local.sSQL)
+	F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,=,"")
+		f.Intrinsic.String.Build("Select max(Seq + 1) from GCG_4516_Details where ltrim(rtrim(customer)) = '{0}' and ltrim(rtrim(ShipToID)) = '{1}'",v.Screen.Form!txtCustCopy.Text.Trim,V.Screen.Form!ddlShipToCopy.Text.Trim,v.Local.sSQL)
+		f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sHold)
+		f.Intrinsic.Control.If(v.Local.sHold,=,"")
+			v.Local.iSeqDetails.Set(1)
+		f.Intrinsic.Control.Else
+			v.Local.iSeqDetails.Set(v.Local.sHold)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.String.Build("Insert into GCG_4516_Details (Seq, Customer, Requirement, Term, ShipDays, Carriers, ShipToID) values ({0},'{1}',{2},{3},{4},'{5}','{6}')",v.Local.iSeqDetails,v.Screen.Form!txtCustCopy.Text.Trim, v.Local.iReqSeq,v.Local.iTermSeq,v.Local.iShipDaysSeq,v.Local.sCarrierID,V.Screen.Form!ddlShipToCopy.Text.Trim,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+Gui.Form.txtCustCopy.Text("")
+Gui.Form.ddlShipToCopy.ClearItems
+
+f.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdCopy_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdCopy_Click.End
+
+Program.Sub.txtCustCopy_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtCustCopy_LostFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError, sSQL, sRet)
+
+f.Intrinsic.String.Build("Select Customer, Name_Customer from V_Customer_Master  where ltrim(rtrim(Customer)) = '{0}'",v.Screen.Form!txtCustCopy.Text.Trim,v.Local.sSQL)
+f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+
+f.Intrinsic.Control.If(v.Local.sRet,=,"")
+	f.Intrinsic.UI.Msgbox("No customer found")
+	gui.Form.txtCustCopy.Text("")
+	gui.Form.ddlShipToCopy.ClearItems
+f.Intrinsic.Control.Else
+	Gui.Form.txtCustCopy.Text(V.Local.sRet(0).Trim)	
+	F.Intrinsic.Control.CallSub(PopulateShipToCopyDDL)
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtCustCopy_LostFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtCustCopy_LostFocus.End
+
+Program.Sub.cmdBrowseCustCopy_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdBrowseCustCopy_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+v.Local..BulkDeclareString(sError, sRet,sSQL)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser(205,"",V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	Gui.Form.txtCustCopy.Text(V.Local.sRet(0).Trim)
+	'Populate Ship To Copy DDL
+	F.Intrinsic.Control.CallSub(PopulateShipToCopyDDL)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdBrowseCustCopy_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdBrowseCustCopy_Click.End
+
+Program.Sub.PopulateShipToCopyDDL.Start
+F.Intrinsic.Control.SetErrorHandler("PopulateShipToCopyDDL_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sCust.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iCnt.Declare(Long)
+V.Local.sCust.Set(V.Screen.Form!txtCustCopy.Text)
+
+Gui.Form.ddlShipToCopy.ClearItems
+Gui.Form.ddlShipToCopy.AddItem("Default")
+Gui.Form.ddlShipToCopy.ListIndex(0)
+
+F.Intrinsic.String.Build("select rtrim(SHIP_SEQ) from V_OE_MULTI_SHIP where rtrim(CUSTOMER) = '{0}';",V.Local.sCust,V.Local.sSQL)
+F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"#$#",V.Local.sRet)
+
+F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sRet.UBound,1)
+	Gui.Form.ddlShipToCopy.AddItem(V.Local.sRet(V.Local.iCnt))
+F.Intrinsic.Control.Next(V.Local.iCnt)
+V.Local.sRet.Redim(0,0)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("PopulateShipToCopyDDL_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4516_ShippingInstructions.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+Program.Sub.PopulateShipToCopyDDL.End
+
+Program.Sub.Comments.Start
+${$0$}$$}$$}$5/17/2017 12:04:03 PM$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This will be a custom GAB script that will run from a custom Menu Item under Bill of Material -> File -> Custom Cobalt BOM Import.  The user will navigate to the xml file that needs to be loaded into Global Shop.  Once the xml is parsed there will be a search in Global Shop to see if a BOM already exists for that Part Number.  If one already exists a compare screen will display showing the differences between the two.  If one does not exist then the screen will display the BOM as it will be uploaded into Global Shop.  Any parts that are listed in the BOM that are not Inventory Parts will be highlighted in Yellow.  If there are any parts not in inventory the user will have the option to click the create Parts button to generate those parts in Global Shop.  If the BOM exists in Global shop then any differences on the new import will be highlighted in Red.  After the Parts have been created then the Upload button will upload and override any previous BOM for that part.
+Program.Sub.Comments.End
