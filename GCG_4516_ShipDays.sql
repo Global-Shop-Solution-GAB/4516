@@ -1,0 +1,4 @@
+CREATE TABLE "GCG_4516_ShipDays"(
+ "Seq" IDENTITY DEFAULT '0',
+ "ShipDays" INTEGER,
+ UNIQUE ("Seq"));
