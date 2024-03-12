@@ -1,0 +1,4 @@
+CREATE TABLE "GCG_4516_Terms"(
+ "Seq" IDENTITY DEFAULT '0',
+ "Term" CHAR(20),
+ UNIQUE ("Seq"));
